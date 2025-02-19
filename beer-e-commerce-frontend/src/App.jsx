@@ -2,8 +2,6 @@
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom'
 import ProductListPage from './pages/ProductListPage/ProductListPage'
 
-//Styles
-import './styles/global.scss'
 
 function App() {
 

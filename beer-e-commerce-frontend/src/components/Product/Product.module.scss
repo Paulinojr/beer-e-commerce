@@ -1,15 +1,16 @@
-@import '@styles/_variables.scss';
-@import '@styles/_mixins.scss';
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .productContainer{
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 2rem 0 2rem;
   width: 155px;
   height: 195px;
   border-radius: 12px;
   background-color: white;
+  position: relative;
 }
 
 .productTitle{
@@ -20,8 +21,8 @@
 }
 
 .productImage{
-  width: 122px;
-  height: 122px;
+  max-width: 60px;
+  max-height: 122px;
   margin: 0.5rem 0;
 }
 
@@ -29,12 +30,26 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  p{
+    margin: 0;
+    padding: 0;
+    margin-left: 25px;
+    padding-top: 15px;
+    font-weight: 500;
+  }
 }
 
 .productAddToCart{
   background-color: $primary-color;
-  font-size: 24px;
+  font-size: 32px;
   color: white;
   border-top-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  height: 40px;
+  width: 40px;
+  @include flex-center;
 }

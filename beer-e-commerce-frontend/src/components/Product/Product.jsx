@@ -1,17 +1,22 @@
 import React from 'react';
 import styles from './Product.module.scss';
 
-const Product = (product) => {
+const Product = ({product}) => {
     return (
-        <React.Fragment className={styles.productContainer}>
-          <p className={styles.productName}>{product.name}</p>
-          <img className={styles.productImage} src={product.image} alt={product.name} />
-          <React.Fragment className={styles.productPriceTag}>
-            <p>${product.price}</p>
-            <React.Fragment className={styles.productAddToCart}>+</React.Fragment>
-          </React.Fragment>
-        </React.Fragment>
-    )
+      <div className={styles.productContainer}>
+        <p className={styles.productName}>{product.name}</p>
+        <img
+          className={styles.productImage}
+          src={product.image}
+          alt={product.name}
+        />
+        <div className={styles.productPriceTag}>
+          <p>${product.price}</p>
+          <div className={styles.productAddToCart}>+</div>
+        </div>
+      </div>
+    );
 }
 
-export default Product
+
+export default Product;

@@ -28,3 +28,12 @@
   margin: 1rem 0;
   font-weight: 700;
 }
+
+.productListContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+
+}
