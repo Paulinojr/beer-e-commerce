@@ -4,7 +4,7 @@ import styles from './Product.module.scss';
 const Product = ({product}) => {
     return (
       <div className={styles.productContainer}>
-        <p className={styles.productName}>{product.name}</p>
+        <p className={styles.productTitle}>{product.name}</p>
         <img
           className={styles.productImage}
           src={product.image}
