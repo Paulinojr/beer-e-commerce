@@ -4,11 +4,11 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.burgerMenu}>
-        <img src="/images/burger-menu.svg" alt="Burger menu" />
+        <img src="/icons/menu-icon.svg" alt="Burger menu" />
       </div>
 
       <img
-        src="https://via.placeholder.com/40"
+        src="https://placehold.co/40x40"
         alt="Profile"
         className={styles.profilePic}
       />

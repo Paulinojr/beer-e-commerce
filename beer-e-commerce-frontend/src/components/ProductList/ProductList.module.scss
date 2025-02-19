@@ -1,0 +1,24 @@
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
+
+.productList{
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.saluteUser{
+  font-size: 0.9rem;
+  color: $font-color-light;
+  margin: 0;
+  opacity: 0.6;
+}
+
+.salute{
+  font-size: 1.5rem;
+  color: $font-color;
+  margin: 0;
+  font-weight: 700;
+
+}

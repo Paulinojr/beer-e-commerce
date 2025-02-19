@@ -1,15 +1,20 @@
-@import '@/styles/variables';
-@import '@/styles/mixins';
+@import '@/styles/_variables.scss';
+@import '@/styles/_mixins.scss';
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $primary-color;
+  padding: 1rem 2rem;
 }
 
 .burgerMenu{
   cursor: pointer;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  @include flex-center;
+  border-radius: 12px;
 }
 
 .profilePic{
