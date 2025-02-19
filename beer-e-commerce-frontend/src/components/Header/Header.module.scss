@@ -1,0 +1,19 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $primary-color;
+}
+
+.burgerMenu{
+  cursor: pointer;
+}
+
+.profilePic{
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
