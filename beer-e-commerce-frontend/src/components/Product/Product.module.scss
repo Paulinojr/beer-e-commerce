@@ -1,0 +1,40 @@
+@import '@styles/_variables.scss';
+@import '@styles/_mixins.scss';
+
+.productContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 155px;
+  height: 195px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.productTitle{
+  font-size: 16px;
+  color: $font-color;
+  margin: 0;
+  text-align: center;
+}
+
+.productImage{
+  width: 122px;
+  height: 122px;
+  margin: 0.5rem 0;
+}
+
+.productPriceTag{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productAddToCart{
+  background-color: $primary-color;
+  font-size: 24px;
+  color: white;
+  border-top-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
