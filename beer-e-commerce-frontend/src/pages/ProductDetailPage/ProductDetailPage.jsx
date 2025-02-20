@@ -1,4 +1,5 @@
 import styles from "./ProductDetailPage.module.scss";
+import ExpandableText from "../../components/Common/ExpandableText/ExpandableText";
 
 const ProductDetailPage = () => {
   return (
@@ -8,29 +9,24 @@ const ProductDetailPage = () => {
         <p> Detail </p>
         <p className={styles.options}>...</p>
       </div>
-      <div>
-        <img />
+      <div className={styles.productDetailImage}>
+        <img src="/products/modelo-especial.jpeg" alt="beer"/>
       </div>
-      <div>
-        <div>
+      <div className={styles.productDetailContent}>
+        <div className={styles.productDetailTitleAndPriceTag}>
           <p>Modelo Especial</p>
-          <p>$26.40</p>
+          <p className={styles.priceTag}>$26.40</p>
         </div>
-        <div>
-          <p>Origin: Import | Stock</p>
+        <div className={styles.productDetailOrigin}>
+          <p>Origin: Import   |   Stock: 300</p>
         </div>
 
-        <div>
+        <div className={styles.productDetailDescription}>
           <h1>Description</h1>
-          <p>
-            Selling imported beer in the US with nearly 60 million cases in
-            annual sales, growing more than 15 million cases over the past 2
-            years. A full flavored Mexican lager consistently delivering ...
-            <span>Read more</span>
-          </p>
+          <ExpandableText/>
         </div>
 
-        <div>
+        <div className={styles.productDetailDescription}>
           <h1> Size </h1>
           <p>12 - 24oz</p>
           <p>18 - 12oz</p>

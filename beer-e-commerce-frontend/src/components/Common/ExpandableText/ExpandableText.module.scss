@@ -1,0 +1,25 @@
+@import "@/styles/mixins";
+@import "@/styles/variables";
+
+.textContainer {
+  color: $font-color-lighter;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
+}
+
+.textContainerExpanded{
+  color: $font-color-lighter;
+}
+
+.readMore{
+  color: $primary-color;
+  cursor: pointer;
+  &:hover{
+    color: darken($primary-color, 10%);
+  }
+}
