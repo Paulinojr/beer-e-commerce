@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./ProductList.module.scss";
 import Product from "@/components/Product/Product";
 
@@ -8,6 +7,7 @@ const ProductList = () => {
     price: 28.65,
     image: "https://placehold.co/120X120",
     key: "1-name",
+    id: 1,
   };
   return (
     <div className={styles.productList}>
