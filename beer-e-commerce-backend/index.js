@@ -1,10 +1,12 @@
 import express from "express";
 import products from "./data/products.js"; 
 import stockPrice from "./data/stock-price.js";
+import cors from "cors";
 
 const app = express();
 const PORT = 8000;
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/api/products", (req, res) => {

@@ -1,10 +1,14 @@
 import Header from '../../components/Header/Header';
 import ProductList from '../../components/ProductList/ProductList';
+import { ProductProvider } from "@/context/ProductContext";
+
 const ProductListPage = () => {
   return (
     <>
-      <Header />
-      <ProductList />
+      <ProductProvider>
+        <Header />
+        <ProductList />
+      </ProductProvider>
     </>
   )
 }
