@@ -1,0 +1,23 @@
+@import "@/styles/variables.scss";
+.sizeOptionsContainer {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.sizeOptionsHiddenInput {
+  display: none; /* Hide the default radio button */
+}
+
+.sizeOptionLabel {
+  font-size: 16px;
+  color: $font-color-lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0px 5px;
+  border: 2px solid #ccc;
+  border-radius: 15.5px;
+  transition: all 0.3s ease;
+}
