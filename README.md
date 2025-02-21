@@ -21,6 +21,6 @@ beer-e-commerce-frontend/
 │   ├── 📄 App.jsx           # Main application component  
 │   └── 📄 main.jsx          # Entry point for the application  
 
-I used Context API for state management. I used vite config to proxy all requests to the local backend  
+I used Context API for state management and SCSS for styling (no library was needed). I used vite config to proxy all requests to the local backend.
 
-For the backend, I started a simple Node.js project and used express to define the routes.  
+For the backend, I started a simple Node.js project and used express to define the GET routes.

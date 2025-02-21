@@ -32,6 +32,8 @@ const ProductDetailPage = () => {
     };
 
     fetchSkusData();
+    const intervalId = setInterval(fetchSkusData, 5000);
+    return () => clearInterval(intervalId);
   }, [product]);
 
 
