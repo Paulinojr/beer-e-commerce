@@ -10,17 +10,17 @@ And it's done! Both frontend and backend are running.
 # About the project
 I bootstraped the frontend project using Vite, the folder structure for this project is as follows:
 beer-e-commerce-frontend/
-├── 📁 public/               # Static assets (e.g., images, icons)
-├── 📁 src/                  # Source code
-│   ├── 📁 components/       # Reusable UI components
-│   ├── 📁 context/          # React Context providers
-│   ├── 📁 hooks/            # Custom React hooks
-│   ├── 📁 pages/            # Page components
-│   ├── 📁 styles/           # Global styles or SCSS files
-│   ├── 📁 utils/            # Utility functions
-│   ├── 📄 App.jsx           # Main application component
-│   └── 📄 main.jsx          # Entry point for the application
+├── 📁 public/               # Static assets (e.g., images, icons)  
+├── 📁 src/                  # Source code  
+│   ├── 📁 components/       # Reusable UI components  
+│   ├── 📁 context/          # React Context providers  
+│   ├── 📁 hooks/            # Custom React hooks  
+│   ├── 📁 pages/            # Page components  
+│   ├── 📁 styles/           # Global styles or SCSS files  
+│   ├── 📁 utils/            # Utility functions  
+│   ├── 📄 App.jsx           # Main application component  
+│   └── 📄 main.jsx          # Entry point for the application  
 
-I used Context API for state management. I used vite config to proxy all requests to the local backend
+I used Context API for state management. I used vite config to proxy all requests to the local backend  
 
-For the backend, I started a simple Node.js project and used express to define the routes.
+For the backend, I started a simple Node.js project and used express to define the routes.  
