@@ -39,7 +39,7 @@ const ProductDetailPage = () => {
   return (
     <>
       <div className={styles.productDetailHeader}>
-        <a className={styles.goBack}>
+        <a className={styles.goBack} onClick={() => window.history.back()}>
           <img src="/icons/icon-back.svg" alt="go back" />
         </a>
         <p> Detail </p>
