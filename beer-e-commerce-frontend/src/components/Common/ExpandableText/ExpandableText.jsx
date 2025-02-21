@@ -1,7 +1,7 @@
 import  { useState } from 'react';
 import styles from './ExpandableText.module.scss';
 
-const ExpandableText = () => {
+const ExpandableText = ({text}) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () =>{
@@ -11,10 +11,7 @@ const ExpandableText = () => {
   return (
     <>
       <p className={isExpanded ? styles.textContainerExpanded: styles.textContainer}>
-        Selling imported beer in the US with nearly 60 million cases in annual
-        sales, growing more than 15 million cases over the past 2 years. Lorem Ipsum
-        Dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor
-        sit amet consectetur adipisicing elit. Quisquam, quos.
+        {text}
       </p>
       <span
         onClick={toggleExpand}

@@ -7,6 +7,7 @@ export const ProductProvider = ({ children }) => {
   const [stockPrice, setStockPrice] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
 
   const fetchProducts = async () => {
@@ -44,6 +45,8 @@ export const ProductProvider = ({ children }) => {
     error,
     fetchProducts,
     fetchStockPrice,
+    selectedProduct,
+    setSelectedProduct,
   };
 
   return (

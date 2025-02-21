@@ -1,44 +1,67 @@
+import { useState, useEffect } from "react";
 import styles from "./ProductDetailPage.module.scss";
-import ExpandableText from "../../components/Common/ExpandableText/ExpandableText";
-import SizeOptions from "../../components/Common/SizeOptions/SizeOptions";
+import ExpandableText from "@/components/Common/ExpandableText/ExpandableText";
+import SizeOptions from "@/components/Common/SizeOptions/SizeOptions";
+import { useProductContext } from "@/hooks/useProductContext";
+import { useLocation } from "react-router-dom";
+import { formatCurrency } from "@/utils/formatCurrency";
 
 const ProductDetailPage = () => {
-  const skus = [
-    {
-      code: "10167",
-      name: "12 - 24oz Cans",
-    },
-    {
-      code: "10166",
-      name: "18 - 12oz Cans",
-    },
-    {
-      code: "10170",
-      name: "Half Barrel",
-    },
-  ];
+  const [skus, setSkus] = useState([])
+  const { fetchStockPrice, stockPrice, selectedProduct} = useProductContext();
+  
+  const { state } = useLocation();
+  const { product } = state;
+
+  useEffect(() => {
+    const fetchSkusData = async () => {
+      if (product?.skus.length > 0) {
+        const skusData = await Promise.all(
+          product.skus.map(async (sku) => {
+            await fetchStockPrice(sku.code);
+            return {
+              code: sku.code,
+              name: sku.name,
+              stock: stockPrice.stock,
+              price: stockPrice.price,
+            };
+          })
+        );
+        setSkus(skusData);
+      }
+    };
+
+    fetchSkusData();
+  }, [product]);
+
+
+
   return (
     <>
       <div className={styles.productDetailHeader}>
-        <a className={styles.goBack}>←</a>
+        <a className={styles.goBack}>
+          <img src="/icons/icon-back.svg" alt="go back" />
+        </a>
         <p> Detail </p>
-        <p className={styles.options}>...</p>
+        <p className={styles.options}>
+          <img src="/icons/icon-dots.svg" alt="options" />
+        </p>
       </div>
       <div className={styles.productDetailImage}>
-        <img src="/products/modelo-especial.jpeg" alt="beer" />
+        <img src={product?.image} alt={product?.brand} />
       </div>
       <div className={styles.productDetailContent}>
         <div className={styles.productDetailTitleAndPriceTag}>
-          <p>Modelo Especial</p>
-          <p className={styles.priceTag}>$26.40</p>
+          <p>{product?.brand}</p>
+          <p className={styles.priceTag}>{formatCurrency(selectedProduct?.price)}</p>
         </div>
         <div className={styles.productDetailOrigin}>
-          <p>Origin: Import | Stock: 300</p>
+          <p>Origin: Import | Stock: {selectedProduct?.stock}</p>
         </div>
 
         <div className={styles.productDetailDescription}>
           <h1>Description</h1>
-          <ExpandableText />
+          <ExpandableText text={product?.information}/>
         </div>
 
         <div className={styles.productDetailDescription}>

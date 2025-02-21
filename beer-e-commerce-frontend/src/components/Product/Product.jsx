@@ -14,13 +14,9 @@ const Product = ({ product }) => {
   }, [product]);
 
 
-  useEffect(() => {
-    console.log(stockPrice)
-  }, [stockPrice])
-
   let navigateTo = useNavigate();
   const handleGoToProductDetail = (product) => {
-    navigateTo(`/product/${product.id}`);
+    navigateTo(`/product/${product.id}`, { state: { product } });
   };
   return (
     <div

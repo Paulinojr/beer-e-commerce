@@ -1,34 +1,48 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import styles from "./SizeOptions.module.scss"
+import { useProductContext } from "@/hooks/useProductContext";
 
 const SizeOptions = ({options}) => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const {fetchStockPrice, stockPrice, setSelectedProduct} = useProductContext();
+  const [selectedOption, setSelectedOption] = useState();
 
-  const handleOptionChange = (option) => {
+
+  const handleOptionChange = async (option) => {
     setSelectedOption(option);
+    await fetchStockPrice(option);
+
+    setSelectedProduct({
+      ...stockPrice,
+      sku: option
+    })
   }
+
+  useEffect(() => {
+    setSelectedOption(options[0]?.code);
+    handleOptionChange(options[0]?.code);
+  }, [options])
 
   return (
     <div className={styles.sizeOptionsContainer}>
-      {options.map((option, index) => (
+      {options?.map((option, index) => (
         <label
           key={index}
           className={`size-option ${
-            selectedOption === option.name ? "selected" : ""
+            selectedOption === option.code ? "selected" : ""
           }`}
         >
           <input
             type="radio"
             name="size"
-            value={option.name}
+            value={option.code}
             className={styles.sizeOptionsHiddenInput}
-            onChange={() => handleOptionChange(option.name)}
+            onChange={() => handleOptionChange(option.code)}
           />
           <span
             className={styles.sizeOptionLabel}
             style={{
-              borderColor: selectedOption === option.name && "#FF9F24",
-              color: selectedOption === option.name && "#FF9F24",
+              borderColor: selectedOption === option.code && "#FF9F24",
+              color: selectedOption === option.code && "#FF9F24",
             }}
           >
             {option.name}
