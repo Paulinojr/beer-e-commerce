@@ -9,7 +9,7 @@ And it's done! Both frontend and backend are running.
 
 # About the project
 I bootstraped the frontend project using Vite, the folder structure for this project is as follows:
-beer-e-commerce-frontend/
+beer-e-commerce-frontend/  
 ├── 📁 public/               # Static assets (e.g., images, icons)  
 ├── 📁 src/                  # Source code  
 │   ├── 📁 components/       # Reusable UI components  
