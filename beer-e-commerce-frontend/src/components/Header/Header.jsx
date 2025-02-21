@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.burgerMenu}>
-        <img src="/icons/menu-icon.svg" alt="Burger menu" />
+        <img src="/icons/menu-icon.svg" alt="Burger menu" onClick={() => window.alert("Menu to be implemented")}/>
       </div>
 
       <img

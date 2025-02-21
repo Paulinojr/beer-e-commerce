@@ -46,7 +46,11 @@ const ProductDetailPage = () => {
         </a>
         <p> Detail </p>
         <p className={styles.options}>
-          <img src="/icons/icon-dots.svg" alt="options" />
+          <img
+            src="/icons/icon-dots.svg"
+            alt="options"
+            onClick={() => window.alert("Settings to be implemented")}
+          />
         </p>
       </div>
       <div className={styles.productDetailImage}>
@@ -55,7 +59,9 @@ const ProductDetailPage = () => {
       <div className={styles.productDetailContent}>
         <div className={styles.productDetailTitleAndPriceTag}>
           <p>{product?.brand}</p>
-          <p className={styles.priceTag}>{formatCurrency(selectedProduct?.price)}</p>
+          <p className={styles.priceTag}>
+            {formatCurrency(selectedProduct?.price)}
+          </p>
         </div>
         <div className={styles.productDetailOrigin}>
           <p>Origin: Import | Stock: {selectedProduct?.stock}</p>
@@ -63,7 +69,7 @@ const ProductDetailPage = () => {
 
         <div className={styles.productDetailDescription}>
           <h1>Description</h1>
-          <ExpandableText text={product?.information}/>
+          <ExpandableText text={product?.information} />
         </div>
 
         <div className={styles.productDetailDescription}>
@@ -72,11 +78,19 @@ const ProductDetailPage = () => {
         </div>
 
         <div className={styles.productDetailButtons}>
-          <div className={styles.productOutlinedButton}>
+          <div
+            className={styles.productOutlinedButton}
+            onClick={() => window.alert("Added to favorites!")}
+          >
             <img src="/icons/icon-bag.svg" alt="icon" />
           </div>
 
-          <div className={styles.productFilledButton}>Add to cart</div>
+          <div
+            className={styles.productFilledButton}
+            onClick={() => window.alert("Product added to cart!")}
+          >
+            Add to cart
+          </div>
         </div>
       </div>
     </>
