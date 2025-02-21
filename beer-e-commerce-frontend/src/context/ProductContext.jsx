@@ -4,14 +4,13 @@ export const ProductContext = createContext();
 
 export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
-  const [stockPrices, setStockPrices] = useState({});
+  const [stockPrice, setStockPrice] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
 
   const fetchProducts = async () => {
     try {
-      console.log("fetching products");
       const response = await fetch("/api/products");
       if (!response.ok) {
         throw new Error("Failed to fetch products");
@@ -27,12 +26,12 @@ export const ProductProvider = ({ children }) => {
 
   const fetchStockPrice = async (sku) => {
     try {
-      const response = await fetch(`/api/stockprice/${sku}`);
+      const response = await fetch(`/api/stock-price/${sku}`);
       if (!response.ok) {
         throw new Error("SKU not found");
       }
       const data = await response.json();
-      setStockPrices((prev) => ({ ...prev, [sku]: data }));
+      setStockPrice(data);
     } catch (error) {
       setError(error.message);
     }
@@ -40,7 +39,7 @@ export const ProductProvider = ({ children }) => {
 
   const value = {
     products,
-    stockPrices,
+    stockPrice,
     loading,
     error,
     fetchProducts,
