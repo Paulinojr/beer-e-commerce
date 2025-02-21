@@ -1,0 +1,15 @@
+{
+  "name": "beer-e-commerce",
+  "version": "1.0.0",
+  "description": "Beer e-commerce test",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm install --prefix beer-e-commerce-frontend && npm install --prefix beer-e-commerce-backend",
+    "dev": "npm run dev:frontend & npm run dev:backend",
+    "dev:frontend": "npm run dev --prefix beer-e-commerce-frontend",
+    "dev:backend": "npm run dev --prefix beer-e-commerce-backend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
